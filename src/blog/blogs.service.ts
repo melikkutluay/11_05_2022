@@ -1,10 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Blog } from './blogs.entity';
 import { Repository, UpdateResult } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateBlogDto } from './dto/create-blog.dto';
 import { UpdateBlogDto } from './dto/update-blog.dto';
-import { User } from 'src/users/user.entity';
 @Injectable()
 export class BlogsService {
 
@@ -13,7 +12,11 @@ export class BlogsService {
     private readonly blogsRepository: Repository<Blog>,
   ) { }
   async findOne(id: number): Promise<Blog> {
-    return this.blogsRepository.findOne(id);
+    let result = await this.blogsRepository.findOne(id);
+    if (result) {
+      return result;
+    }
+    throw new HttpException('Post not found', HttpStatus.NOT_FOUND);
   }
   async findAll(): Promise<Blog[]> {
     return this.blogsRepository.find();
@@ -26,5 +29,8 @@ export class BlogsService {
   }
   update(id: number, updateBlogDto: UpdateBlogDto): Promise<UpdateResult> {
     return this.blogsRepository.update(id, updateBlogDto);
+  }
+  async findImage(id: number): Promise<Blog> {
+    return await this.blogsRepository.findOne(id);
   }
 }

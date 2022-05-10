@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, Res, Req } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { Blog } from './blogs.entity';
 import { BlogsService } from './blogs.service';
 import { CreateBlogDto } from './dto/create-blog.dto';
@@ -7,16 +7,16 @@ import { UpdateBlogDto } from './dto/update-blog.dto';
 @Controller('blogs')
 export class BlogsController {
   constructor(private readonly blogsService: BlogsService) { }
- 
+
   @Get(':id')
-  findOne(@Param('id') id: number/* , @Res() res: Response */): Promise<Blog> {    
-    const result = this.blogsService.findOne(id);
-    result.then(res => {
-      let new_visitor = res.visitor + 1;
-      res.visitor = new_visitor;
-      this.blogsService.update(id, res)
-    })
-    //res.status(200).json(result);
+  async findOne(@Param('id') id: number,): Promise<Blog> {
+    const result = await this.blogsService.findOne(id);
+    if (Object.keys(result).length > 0) {
+      let new_visitor = result.visitor + 1;
+      result.visitor = new_visitor;
+      await this.blogsService.update(id, result)
+      result.image_path = `${process.env.SERVER_HOST}/${process.env.SERVER_PORT}${result['image_path']}`;
+    }
     return result;
   }
   @Get()
@@ -35,15 +35,9 @@ export class BlogsController {
   remove(@Param('id') id: number): Promise<void> {
     return this.blogsService.remove(id);
   }
-
-
-  /* @Get('images/:imageName')
-  findImage(@Param('imageName') imageName, @Res() res): Observable<Object> {
-    return of(res.sendFile(join(__dirname, '../../' + imageName)));
+  @Get('/images/:id')
+  async findImage(@Param('id') id: number): Promise<Object> {
+    const result = await this.blogsService.findImage(id);
+    return { URL: `localhost:3000/${result['image_path']}` };
   }
-
-  @Post('images')
-  ResUrl(@Req() req, @Res() res): Observable<Object> {
-    return of(res.sendFile(join(__dirname, '../../' + req.body.path)));
-  } */
 }
