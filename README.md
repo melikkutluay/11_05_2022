@@ -40,7 +40,7 @@ $ npm run start:prod
 
 ## SwaggerUI 
 
-[Swagger UI](http://localhost:3000/api) visualize and interact with the Rest API's resources .
+[Swagger UI](http://localhost:3000/api) This example repo uses the NestJS swagger module for API documentation .
 
 ## Docker 
 
