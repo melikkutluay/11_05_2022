@@ -42,7 +42,7 @@ $ npm run start:prod
 
 [Swagger UI](http://localhost:3000/api) visualize and interact with the Rest API's resources .
 
-## SwaggerUI 
+## Docker 
 
 ```bash
 There is a docker-compose.yml file for starting Docker.
