@@ -15,10 +15,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<!-- ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
+ -->
 ## Installation
 
 ```bash
@@ -40,8 +40,15 @@ $ npm run start:prod
 
 ## SwaggerUI 
 
-[Swagger UI](http://localhost:3000/api) framework TypeScript starter repository.
+[Swagger UI](http://localhost:3000/api) visualize and interact with the Rest API's resources .
 
+## SwaggerUI 
+
+```bash
+There is a docker-compose.yml file for starting Docker.
+# Docker container up
+docker-compose up
+```
 
 ## Test
 
