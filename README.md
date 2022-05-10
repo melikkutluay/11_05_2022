@@ -42,7 +42,7 @@ $ npm run start:prod
 
 ```bash
 # development
-[SwaggerUI](https://localhost:3000/api)
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 ```
 
 ## Test
