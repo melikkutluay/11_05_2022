@@ -40,10 +40,8 @@ $ npm run start:prod
 
 ## SwaggerUI 
 
-```bash
-# development
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-```
+[Swagger UI](https://localhost:3000/api) framework TypeScript starter repository.
+
 
 ## Test
 
