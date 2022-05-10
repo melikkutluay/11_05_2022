@@ -40,7 +40,7 @@ $ npm run start:prod
 
 ## SwaggerUI 
 
-[Swagger UI](localhost:3000/api) framework TypeScript starter repository.
+[Swagger UI](https://localhost:3000/api) framework TypeScript starter repository.
 
 
 ## Test
