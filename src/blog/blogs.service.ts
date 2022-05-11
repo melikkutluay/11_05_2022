@@ -9,10 +9,10 @@ export class BlogsService {
 
   constructor(
     @InjectRepository(Blog)
-    private readonly blogsRepository: Repository<Blog>,
+    private readonly blogsRepository: Repository<Blog>,    //Create a repository with my Blog Entity 
   ) { }
   async findOne(id: number): Promise<Blog> {
-    let result = await this.blogsRepository.findOne(id);
+    let result = await this.blogsRepository.findOne(id);   //waiting response data with await
     if (result) {
       return result;
     }

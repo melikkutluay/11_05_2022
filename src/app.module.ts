@@ -4,7 +4,7 @@ import { BlogModule } from './blog/blogs.module'
 
 @Module({
   imports: [
-  TypeOrmModule.forRoot(),
+  TypeOrmModule.forRoot(), // Import connection DB parameter
     BlogModule,
   ],
 })

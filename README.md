@@ -47,11 +47,11 @@ $ npm run start:prod
 
 ## SwaggerUI 
 
-[Swagger UI](http://localhost:3000/api) This example repo uses the NestJS swagger module for API documentation .
+[Swagger UI](http://localhost:3000/api) This example repo blogs the NestJS swagger module for API documentation .
 
 ## PostMan 
 
-[PostMan](https://documenter.getpostman.com/view/14336225/UyxgJ8FP) This example repo uses the NestJS swagger module for API documentation .
+[PostMan](https://documenter.getpostman.com/view/14336225/UyxgJ8FP) This example repo blogs the NestJS postman for API documentation .
 
 
 <!-- ## Test
