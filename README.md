@@ -24,6 +24,13 @@
 ```bash
 $ npm install
 ```
+## Docker 
+
+```bash
+There is a docker-compose.yml file for starting Docker.
+# Docker container up
+docker-compose up
+```
 
 ## Running the app
 
@@ -42,13 +49,10 @@ $ npm run start:prod
 
 [Swagger UI](http://localhost:3000/api) This example repo uses the NestJS swagger module for API documentation .
 
-## Docker 
+## PostMan 
 
-```bash
-There is a docker-compose.yml file for starting Docker.
-# Docker container up
-docker-compose up
-```
+[PostMan](https://documenter.getpostman.com/view/14336225/UyxgJ8FP) This example repo uses the NestJS swagger module for API documentation .
+
 
 <!-- ## Test
 
