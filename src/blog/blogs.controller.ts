@@ -3,12 +3,20 @@ import { Blog } from './blogs.entity';
 import { BlogsService } from './blogs.service';
 import { CreateBlogDto } from './dto/create-blog.dto';
 import { UpdateBlogDto } from './dto/update-blog.dto';
+import {
+  ApiNotFoundResponse,
+  ApiOkResponse,
+  ApiTags,
+} from '@nestjs/swagger'
 
 @Controller('blogs')
+@ApiTags('Blogs')
 export class BlogsController {
   constructor(private readonly blogsService: BlogsService) { }
 
   @Get(':id')
+  @ApiOkResponse({ description: 'Blog retrieved successfully.' })
+  @ApiNotFoundResponse({ description: 'Blog not found.' })
   async findOne(@Param('id') id: number,): Promise<Blog> {
     const result = await this.blogsService.findOne(id);
     if (Object.keys(result).length > 0) {
@@ -20,6 +28,7 @@ export class BlogsController {
     return result;
   }
   @Get()
+  @ApiOkResponse({ description: 'Blogs retrieved successfully.' })
   findAll(): Promise<Blog[]> {
     return this.blogsService.findAll();
   }
@@ -41,3 +50,4 @@ export class BlogsController {
     return { URL: `localhost:3000/${result['image_path']}` };
   }
 }
+

@@ -50,7 +50,7 @@ There is a docker-compose.yml file for starting Docker.
 docker-compose up
 ```
 
-## Test
+<!-- ## Test
 
 ```bash
 # unit tests
@@ -61,4 +61,4 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
-```
+``` -->
